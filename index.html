@@ -6,6 +6,35 @@
     <title>Главная - Портфолио</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .project-card {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .progress-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .diary-item {
+            border-left: 4px solid #28a745;
+            padding-left: 1rem;
+        }
+        .diary-item.in-progress {
+            border-left-color: #ffc107;
+        }
+        .course-card {
+            transition: transform 0.3s ease;
+        }
+        .course-card:hover {
+            transform: translateY(-3px);
+        }
+    </style>
 </head>
 <body class="bg-light">
     <div class="container-fluid p-0">
@@ -35,6 +64,16 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="index.html">
                                 <i class="bi bi-house me-1"></i>Главная
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/projects.html">
+                                <i class="bi bi-folder me-1"></i>Проекты
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/diary.html">
+                                <i class="bi bi-journal me-1"></i>Дневник
                             </a>
                         </li>
                         <li class="nav-item">
@@ -183,7 +222,7 @@
                     <div class="card-body">
                         <div class="row g-3">
                             <div class="col-md-4">
-                                <div class="card h-100">
+                                <div class="card h-100 project-card" onclick="location.href='pages/projects.html'">
                                     <img src="images/project1.jpg" class="card-img-top" alt="Личный сайт" style="height: 150px; object-fit: cover;">
                                     <div class="card-body">
                                         <h5 class="card-title">Личный сайт</h5>
@@ -199,7 +238,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="card h-100">
+                                <div class="card h-100 project-card" onclick="location.href='pages/projects.html'">
                                     <img src="images/project2.jpg" class="card-img-top" alt="Тодо приложение" style="height: 150px; object-fit: cover;">
                                     <div class="card-body">
                                         <h5 class="card-title">Тодо приложение</h5>
@@ -214,7 +253,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="card h-100">
+                                <div class="card h-100 project-card" onclick="location.href='pages/projects.html'">
                                     <img src="images/project3.jpg" class="card-img-top" alt="Интернет-магазин" style="height: 150px; object-fit: cover;">
                                     <div class="card-body">
                                         <h5 class="card-title">Интернет-магазин</h5>
@@ -228,6 +267,67 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="pages/projects.html" class="btn btn-primary">
+                                <i class="bi bi-arrow-right me-2"></i>Все проекты
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Diary Section -->
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title h5 mb-0">
+                            <i class="bi bi-journal text-primary me-2"></i>
+                            Последние записи дневника
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="diary-item mb-3">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h6 class="mb-1">15 дек - Верстка макета сайта</h6>
+                                            <p class="text-muted mb-0 small">Завершена верстка главной страницы портфолио</p>
+                                        </div>
+                                        <span class="badge bg-success small">
+                                            <i class="bi bi-check-circle me-1"></i>Выполнено
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="diary-item in-progress">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h6 class="mb-1">20 дек - Работа с формами</h6>
+                                            <p class="text-muted mb-0 small">Валидация форм, обработка событий</p>
+                                        </div>
+                                        <span class="badge bg-warning text-dark small">
+                                            <i class="bi bi-arrow-repeat me-1"></i>In progress
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="course-card card border-0">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Текущий прогресс</h6>
+                                        <div class="progress mb-2" style="height: 8px;">
+                                            <div class="progress-bar bg-primary" style="width: 75%"></div>
+                                        </div>
+                                        <small class="text-muted">Общий прогресс обучения</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="pages/diary.html" class="btn btn-outline-primary">
+                                <i class="bi bi-journal-text me-2"></i>Перейти в дневник
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -252,5 +352,4 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
