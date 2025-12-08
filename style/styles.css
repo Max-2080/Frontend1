@@ -50,10 +50,42 @@
 }
 
 /* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* 1. Сброс стилей / Normalize */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* 2. СТИЛИ ДОСТУПНОСТИ */
+.skip-link {
+    position: absolute;
+    inset-inline-start: 1rem;
+    inset-block-start: -100%;
+    z-index: 10000;
+    padding: .5rem .75rem;
+    background: #111;
+    color: #fff;
+    border-radius: .5rem;
+    text-decoration: none;
+}
+
+.skip-link.focus,
+.skip-link.focus-visible { 
+    inset-block-start: 1rem; 
+}
+
+.focus-visible { 
+    outline: 3px solid #2563eb; 
+    outline-offset: 2px; 
+}
+
+a, button, input, textarea { 
+    outline-offset: 2px; 
+}
+
+/* Увеличение зоны клика для тач-устройств */
+@media (pointer: coarse) {
+    a, button, .nav_link { 
+        min-height: 44px; 
+        padding: .75rem 1rem; 
+    }
 }
 
 body {
