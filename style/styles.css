@@ -134,11 +134,20 @@ body {
 
 /* Navigation */
 .nav {
-    background: var(--primary-color);
+    .nav{
     position: sticky;
     top: 0;
+ /* Прибавки для вырезов/жестовых панелей — только где они есть */
+    padding-block-start: calc(.75rem + env(safe-area-inset-top));
+    padding-block-end: .75rem;
+    padding-inline-start: calc(var(--space-md, 1rem) + env(safe-area-insetleft));
+    padding-inline-end: calc(var(--space-md, 1rem) + env(safe-area-insetright));
+    background: #2563eb;
+    color: #fff;
     z-index: 100;
-    box-shadow: var(--shadow-md);
+    isolation: isolate; /* свой контекст для теней/фильтров */
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+}
 }
 
 .nav__list {
