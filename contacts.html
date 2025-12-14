@@ -3,148 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты | Звериков Максим</title>
-    <meta name="description" content="Свяжитесь со мной для сотрудничества">
-    <link rel="stylesheet" href="styles.css">
-    <meta name="color-scheme" content="light dark">
+    <title>Контакты | Наш Сайт</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/a11y.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <!-- Навигация -->
-    <nav class="nav">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">ЗМ</a>
-            <ul class="nav-list">
-                <li><a href="index.html" class="nav-link">Главная</a></li>
-                <li><a href="diary.html" class="nav-link">Дневник</a></li>
-                <li><a href="projects.html" class="nav-link">Проекты</a></li>
-                <li><a href="contacts.html" class="nav-link active">Контакты</a></li>
-            </ul>
-            <button class="menu-toggle" aria-label="Меню">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+    <!-- Скип-ссылка для быстрой навигации -->
+    <a href="#main-content" class="skip-link">Перейти к основному содержанию</a>
 
-    <main class="main">
-        <section class="contacts section">
-            <div class="container">
-                <h1 class="section-title">Контакты</h1>
-                <p class="subtitle">Свяжитесь со мной для обсуждения проектов или сотрудничества</p>
-                
-                <div class="contacts-grid">
-                    <div class="contact-info">
-                        <h2>Контактная информация</h2>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">📧</div>
-                            <div class="contact-details">
-                                <h3>Email</h3>
-                                <a href="mailto:svetikov.maxim@efbo-16-24.ru">svetikov.maxim@efbo-16-24.ru</a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">📱</div>
-                            <div class="contact-details">
-                                <h3>Телефон</h3>
-                                <a href="tel:+79991234567">+7 (999) 123-45-67</a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">📍</div>
-                            <div class="contact-details">
-                                <h3>Город</h3>
-                                <p>Москва, Россия</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">🎓</div>
-                            <div class="contact-details">
-                                <h3>Образование</h3>
-                                <p>Студент ЭФБО-16-24</p>
-                            </div>
-                        </div>
-                        
-                        <div class="social-links">
-                            <h3>Социальные сети</h3>
-                            <div class="social-icons">
-                                <a href="https://github.com" target="_blank" class="social-icon" aria-label="GitHub">
-                                    GitHub
-                                </a>
-                                <a href="https://vk.com" target="_blank" class="social-icon" aria-label="ВКонтакте">
-                                    ВКонтакте
-                                </a>
-                                <a href="https://t.me" target="_blank" class="social-icon" aria-label="Telegram">
-                                    Telegram
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Шапка -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Основная навигация">
+            <ul>
+                <li><a href="index.html" aria-current="page">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <main id="main-content" role="main" tabindex="-1">
+        <h1>Свяжитесь с нами</h1>
+        
+        <section aria-labelledby="contact-info">
+            <h2 id="contact-info">Контактная информация</h2>
+            <address>
+                <p><strong>Адрес:</strong> г. Москва, ул. Примерная, д. 10</p>
+                <p><strong>Телефон:</strong> <a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+                <p><strong>Email:</strong> <a href="mailto:info@example.com">info@example.com</a></p>
+            </address>
+        </section>
+
+        <!-- Форма обратной связи -->
+        <section aria-labelledby="contact-form-title">
+            <h2 id="contact-form-title">Форма обратной связи</h2>
+            
+            <form 
+                id="contact-form" 
+                action="#" 
+                method="post" 
+                aria-labelledby="contact-form-title"
+                novalidate
+            >
+                <!-- Группа: Личные данные -->
+                <fieldset aria-labelledby="personal-info-legend">
+                    <legend id="personal-info-legend">Личные данные</legend>
                     
-                    <div class="contact-form-wrapper">
-                        <h2>Форма обратной связи</h2>
-                        <form class="contact-form" id="contactFormPage">
-                            <div class="form-group">
-                                <label for="name-page">Имя</label>
-                                <input id="name-page" name="name" type="text" required 
-                                       aria-describedby="name-hint-page"
-                                       placeholder="Введите ваше имя">
-                                <span id="name-hint-page" class="visually-hidden">Пожалуйста, введите ваше имя</span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email-page">E-mail</label>
-                                <input id="email-page" name="email" type="email" required 
-                                       aria-describedby="email-hint-page email-error-page"
-                                       placeholder="example@email.com">
-                                <span id="email-hint-page" class="visually-hidden">Мы пришлём ответ на этот адрес</span>
-                                <span id="email-error-page" class="form-error visually-hidden" role="alert"></span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="subject">Тема сообщения</label>
-                                <input id="subject" name="subject" type="text" 
-                                       placeholder="О чем вы хотите поговорить?">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message-page">Сообщение</label>
-                                <textarea id="message-page" name="message" rows="6" required 
-                                          placeholder="Опишите ваше предложение или вопрос..."></textarea>
-                            </div>
-                            
-                            <div class="form-group checkbox">
-                                <input type="checkbox" id="consent" name="consent" required>
-                                <label for="consent">
-                                    Я согласен на обработку персональных данных
-                                </label>
-                            </div>
-                            
-                            <button type="submit" class="button button-primary">Отправить сообщение</button>
-                        </form>
+                    <div class="form-group">
+                        <label for="name">
+                            Имя <span class="required" aria-hidden="true">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required 
+                            aria-required="true"
+                            aria-describedby="name-hint"
+                            placeholder="Введите ваше имя"
+                        >
+                        <small id="name-hint" class="hint">Например: Иван Иванов</small>
+                        <div class="error-message" id="name-error" aria-live="polite"></div>
                     </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            Email <span class="required" aria-hidden="true">*</span>
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            aria-required="true"
+                            aria-describedby="email-hint"
+                            placeholder="example@mail.com"
+                        >
+                        <small id="email-hint" class="hint">Мы не передаем ваш email третьим лицам</small>
+                        <div class="error-message" id="email-error" aria-live="polite"></div>
+                    </div>
+                </fieldset>
+
+                <!-- Группа: Сообщение -->
+                <fieldset aria-labelledby="message-legend">
+                    <legend id="message-legend">Ваше сообщение</legend>
+                    
+                    <div class="form-group">
+                        <label for="subject">Тема сообщения</label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="subject"
+                            placeholder="О чём вы хотите спросить?"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">
+                            Сообщение <span class="required" aria-hidden="true">*</span>
+                        </label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="5" 
+                            required 
+                            aria-required="true"
+                            aria-describedby="message-hint"
+                            placeholder="Опишите ваш вопрос или предложение..."
+                        ></textarea>
+                        <small id="message-hint" class="hint">Максимум 1000 символов</small>
+                        <div class="error-message" id="message-error" aria-live="polite"></div>
+                    </div>
+                </fieldset>
+
+                <!-- Чекбокс согласия -->
+                <div class="form-group checkbox-group">
+                    <input 
+                        type="checkbox" 
+                        id="consent" 
+                        name="consent" 
+                        required 
+                        aria-required="true"
+                    >
+                    <label for="consent">
+                        Я согласен на обработку персональных данных
+                        <span class="required" aria-hidden="true">*</span>
+                    </label>
+                    <div class="error-message" id="consent-error" aria-live="polite"></div>
                 </div>
+
+                <!-- Кнопки -->
+                <div class="form-actions">
+                    <button 
+                        type="submit" 
+                        class="btn-primary"
+                        aria-label="Отправить форму обратной связи"
+                    >
+                        Отправить
+                    </button>
+                    <button 
+                        type="reset" 
+                        class="btn-secondary"
+                        aria-label="Очистить форму"
+                    >
+                        Очистить
+                    </button>
+                </div>
+
+                <!-- Индикатор обязательных полей -->
+                <p class="required-info" aria-hidden="true">
+                    <span class="required">*</span> — обязательные поля
+                </p>
+            </form>
+        </section>
+
+        <!-- Карта (декоративный элемент) -->
+        <section aria-labelledby="map-title">
+            <h2 id="map-title">Как нас найти</h2>
+            <div class="map-placeholder" role="img" aria-label="Карта расположения нашего офиса">
+                <p>Здесь будет интерактивная карта</p>
             </div>
         </section>
     </main>
 
-    <!-- Футер -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <p>&copy; 2024 Светиков Максим. Все права защищены.</p>
-            <p>Студент ЭФБО-16-24</p>
-            <div class="footer-links">
-                <a href="mailto:example@email.com">Email</a>
-                <a href="https://github.com" target="_blank">GitHub</a>
-                <a href="https://vk.com" target="_blank">ВКонтакте</a>
-            </div>
-        </div>
+    <!-- Подвал -->
+    <footer role="contentinfo">
+        <p>&copy; 2025 Наш Сайт. Все права защищены.</p>
+        <p>
+            <a href="privacy.html">Политика конфиденциальности</a> |
+            <a href="accessibility.html">Декларация доступности</a>
+        </p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Модальное окно успешной отправки -->
+    <div 
+        id="success-modal" 
+        class="modal" 
+        role="dialog" 
+        aria-modal="true" 
+        aria-labelledby="modal-title"
+        aria-describedby="modal-description"
+        hidden
+        tabindex="-1"
+    >
+        <div class="modal-content">
+            <h2 id="modal-title">Сообщение отправлено!</h2>
+            <p id="modal-description">Мы получили ваше сообщение и свяжемся с вами в ближайшее время.</p>
+            <button 
+                id="close-modal" 
+                class="btn-primary"
+                aria-label="Закрыть диалоговое окно"
+            >
+                Закрыть
+            </button>
+        </div>
+    </div>
+
+    <!-- Подключение скриптов -->
+    <script src="js/script.js"></script>
+    <script src="js/a11y.js"></script>
 </body>
 </html>
