@@ -3,100 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная - Портфолио</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <title>Светиков Максим | Портфолио</title>
+    <meta name="description" content="Студент ЭФБО-16-24, увлекающийся веб-разработкой. Создаю красивые и функциональные сайты.">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="color-scheme" content="light dark">
 </head>
 <body>
-    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
-        <header class="header">…</header>
-        <nav class="nav" aria-label="Основная навигация">…</nav>
-        <main id="main" class="main">…</main>
-        <footer class="footer">…</footer>
-    </body>
-    <!-- Основной контейнер -->
-    <div class="page">
-
-        <!-- Шапка -->
-        <header class="header">
-            <h1 class="header__title">Моё портфолио</h1>
-        </header>
-
-        <!-- Навигация -->
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item nav__item--active">
-                    <a class="nav__link" href="index.html">Главная</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="pages/news.html">Новости</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="pages/contacts.html">Контакты</a>
-                </li>
+    <!-- Навигация с sticky-позиционированием и safe-area -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="#" class="logo">ЗМ</a>
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link active">Главная</a></li>
+                <li><a href="diary.html" class="nav-link">Дневник</a></li>
+                <li><a href="projects.html" class="nav-link">Проекты</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
             </ul>
-        </nav>
+            <button class="menu-toggle" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
-        <!-- Основной контент -->
-        <main class="main">
-
-            <!-- Профиль -->
-            <section class="profile">
-                <div class="profile__card">
-                    <img class="profile__photo" src="images/photo.png" alt="Фото">
-                    <div class="profile__info">
-                        <h2 class="profile__name">Светиков Максим</h2>
-                        <p class="profile__group">ЭФБО-16-24</p>
+    <main class="main">
+        <!-- Главная страница -->
+        <section id="home" class="hero section">
+            <div class="container hero-container">
+                <!-- Герой-картинка с современными форматами -->
+                <figure class="hero-image">
+                    <picture>
+                        <!-- Современные форматы -->
+                        <!-- ЗАМЕНИТЕ ПУТИ НА ВАШИ ФАЙЛЫ АВАТАРКИ -->
+                        <source
+                            type="image/avif"
+                            srcset="images/hero-150.avif 150w, images/hero-200.avif 200w, images/hero-300.avif 300w"
+                            sizes="200px">
+                        <source
+                            type="image/webp"
+                            srcset="images/hero-150.webp 150w, images/hero-200.webp 200w, images/hero-300.webp 300w"
+                            sizes="200px">
+                        <!-- Запасной JPEG -->
+                        <img class="hero-photo"
+                            src="images/hero-200.jpg"
+                            srcset="images/hero-150.jpg 150w, images/hero-200.jpg 200w, images/hero-300.jpg 300w"
+                            sizes="200px"
+                            width="200" height="200"
+                            alt="Портрет студента Зверикова Максима"
+                            fetchpriority="high">
+                    </picture>
+                </figure>
+                
+                <div class="hero-content">
+                    <h1 class="hero-title">Светиков Максим</h1>
+                    <p class="hero-subtitle">ЭФБО-16-24</p>
+                    
+                    <div class="hero-about">
+                        <h2 class="section-title">Обо мне</h2>
+                        <p class="hero-text">
+                            Студент ЭФБО-16-24, увлекаюсь веб-разработкой. Изучаю HTML, CSS и JavaScript. 
+                            Люблю создавать красивые и функциональные сайты.
+                        </p>
+                    </div>
+                    
+                    <div class="hero-skills">
+                        <h2 class="section-title">Мои навыки</h2>
+                        <ul class="skills-list">
+                            <li class="skill-item">
+                                <span class="skill-name">HTML</span>
+                                <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
+                            </li>
+                            <li class="skill-item">
+                                <span class="skill-name">CSS</span>
+                                <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+                            </li>
+                            <li class="skill-item">
+                                <span class="skill-name">JavaScript</span>
+                                <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Обо мне -->
-            <section class="about">
-                <h2 class="about__title">Обо мне</h2>
-                <div class="about__content">
-                    <p class="about__text">
-                        Студент ЭФБО-16-24, увлекаюсь веб-разработкой. Изучаю HTML, CSS и JavaScript. Люблю создавать красивые и функциональные сайты.
-                    </p>
+        <!-- Проекты с адаптивной Grid-сеткой -->
+        <section id="projects" class="projects section">
+            <div class="container">
+                <h2 class="section-title">Проекты</h2>
+                
+                <!-- Контейнер для контейнерных запросов -->
+                <div class="projects-area">
+                    <div class="projects-list">
+                        <article class="project-card">
+                            <!-- ЗАМЕНИТЕ ПУТИ НА ВАШИ ФАЙЛЫ ПРОЕКТОВ -->
+                            <div class="project-card-image">
+                                <img src="images/project1.jpg" alt="Личный сайт-портфолио" width="400" height="300">
+                            </div>
+                            <div class="project-card-content">
+                                <h3 class="project-card-title">Личный сайт</h3>
+                                <p class="project-card-description">
+                                    Сайт-портфолио на HTML и CSS с адаптивным дизайном и современными возможностями.
+                                </p>
+                                <a href="#" class="button">Подробнее</a>
+                            </div>
+                        </article>
+                        
+                        <article class="project-card">
+                            <div class="project-card-image">
+                                <img src="images/project2.jpg" alt="Веб-приложение" width="400" height="300">
+                            </div>
+                            <div class="project-card-content">
+                                <h3 class="project-card-title">Веб-приложение</h3>
+                                <p class="project-card-description">
+                                    Простое веб-приложение на JavaScript с интерактивными элементами и локальным хранилищем.
+                                </p>
+                                <a href="#" class="button">Подробнее</a>
+                            </div>
+                        </article>
+                        
+                        <article class="project-card">
+                            <div class="project-card-image">
+                                <img src="images/project3.jpg" alt="Адаптивный лендинг" width="400" height="300">
+                            </div>
+                            <div class="project-card-content">
+                                <h3 class="project-card-title">Адаптивный лендинг</h3>
+                                <p class="project-card-description">
+                                    Лендинговая страница с адаптивной версткой, оптимизированными изображениями и анимациями.
+                                </p>
+                                <a href="#" class="button">Подробнее</a>
+                            </div>
+                        </article>
+                    </div>
                 </div>
-            </section>
-
-            <!-- Навыки -->
-            <section class="skills">
-                <h2 class="skills__title">Мои навыки</h2>
-                <div class="skills__list">
-                    <div class="skill skill--html">
-                        <span class="skill__name">HTML</span>
-                    </div>
-                    <div class="skill skill--css">
-                        <span class="skill__name">CSS</span>
-                    </div>
-                    <div class="skill skill--js">
-                        <span class="skill__name">JavaScript</span>
-                    </div>
+                
+                <div class="projects-actions">
+                    <a href="projects.html" class="button">Все проекты</a>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Проекты -->
-            <section class="projects">
-                <h2 class="projects__title">Проекты</h2>
-                <div class="projects__grid">
-                    <div class="project-card">
-                        <h3 class="project-card__title">Личный сайт</h3>
-                        <p class="project-card__desc">Сайт-портфолио на HTML и CSS</p>
+        <!-- Форма для примера доступности -->
+        <section id="contact-form" class="contact section">
+            <div class="container">
+                <h2 class="section-title">Связаться со мной</h2>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input id="name" name="name" type="text" required aria-describedby="name-hint">
+                        <span id="name-hint" class="visually-hidden">Пожалуйста, введите ваше имя</span>
                     </div>
-                    <div class="project-card">
-                        <h3 class="project-card__title">приложение</h3>
-                        <p class="project-card__desc">Простое приложение </p>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input id="email" name="email" type="email" required aria-describedby="email-hint email-error">
+                        <span id="email-hint" class="visually-hidden">Мы пришлём ответ на этот адрес</span>
+                        <span id="email-error" class="visually-hidden" role="alert"></span>
                     </div>
-                </div>
-            </section>
+                    
+                    <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="button button-primary">Отправить</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
-        </main>
+    <!-- Футер с safe-area -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2024 Светиков Максим. Все права защищены.</p>
+            <p>Студент ЭФБО-16-24</p>
+            <div class="footer-links">
+                <a href="mailto:example@email.com">Email</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://vk.com" target="_blank">ВКонтакте</a>
+            </div>
+        </div>
+    </footer>
 
-        <!-- Низ -->
-        <footer class="footer">
-            <p class="footer__text">&copy; 2024 Мой сайт</p>
-        </footer>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>
