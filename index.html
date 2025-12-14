@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Светиков Максим | Портфолио</title>
-    <meta name="description" content="Студент ЭФБО-16-24, увлекающийся веб-разработкой. Создаю красивые и функциональные сайты.">
+    <meta name="description" content="Студент 3050-16-24, увлекающийся веб-разработкой">
     <link rel="stylesheet" href="styles.css">
     <meta name="color-scheme" content="light dark">
 </head>
@@ -12,13 +12,13 @@
     <!-- Навигация с sticky-позиционированием и safe-area -->
     <nav class="nav">
         <div class="container nav-container">
-            <a href="#" class="logo">ЗМ</a>
+            <a href="index.html" class="logo">СМ</a>
             <ul class="nav-list">
-            <li><a href="index.html" class="nav-link active">Главная</a></li>  <!-- Изменено -->
-            <li><a href="diary.html" class="nav-link">Дневник</a></li>
-            <li><a href="projects.html" class="nav-link">Проекты</a></li>
-            <li><a href="contacts.html" class="nav-link">Контакты</a></li>
-        </ul>
+                <li><a href="index.html" class="nav-link active">Главная</a></li>
+                <li><a href="diary.html" class="nav-link">Дневник</a></li>
+                <li><a href="projects.html" class="nav-link">Проекты</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+            </ul>
             <button class="menu-toggle" aria-label="Меню">
                 <span></span>
                 <span></span>
@@ -31,30 +31,30 @@
         <!-- Главная страница -->
         <section id="home" class="hero section">
             <div class="container hero-container">
-                <!-- Герой-картинка с современными форматами -->
+                <!-- === ТЕХНИКА 2: Picture element с форматами === -->
                 <figure class="hero-image">
                     <picture>
-                        <!-- Современные форматы -->
-                        <!-- ЗАМЕНИТЕ ПУТИ НА ВАШИ ФАЙЛЫ АВАТАРКИ -->
-                        <source
-                            type="image/avif"
-                            srcset="images/hero-150.avif 150w, images/hero-200.avif 200w, images/hero-300.avif 300w"
-                            sizes="200px">
-                        <source
+                        <!-- WebP для современных браузеров -->
+                        <source 
+                            srcset="images/hero-200.webp 200w, images/hero-400.webp 400w"
                             type="image/webp"
-                            srcset="images/hero-150.webp 150w, images/hero-200.webp 200w, images/hero-300.webp 300w"
                             sizes="200px">
-                        <!-- Запасной JPEG -->
+                        <!-- JPEG для старых браузеров -->
+                        <source 
+                            srcset="images/hero-200.jpg 200w, images/hero-400.jpg 400w" 
+                            type="image/jpeg"
+                            sizes="200px">
+                        <!-- === ТЕХНИКА 4: Retina display поддержка === -->
                         <img class="hero-photo"
-                            src="images/hero-201.jpg"
-                            srcset="images/hero-150.jpg 150w, images/hero-200.jpg 200w, images/hero-300.jpg 300w"
+                            src="images/hero-200.jpg"
+                            srcset="images/hero-200.jpg 1x, images/hero-400.jpg 2x"
                             sizes="200px"
                             width="200" height="200"
                             alt="Портрет студента Светикова Максима"
                             fetchpriority="high">
                     </picture>
                 </figure>
-                
+
                 <div class="hero-content">
                     <h1 class="hero-title">Светиков Максим</h1>
                     <p class="hero-subtitle">ЭФБО-16-24</p>
@@ -62,7 +62,7 @@
                     <div class="hero-about">
                         <h2 class="section-title">Обо мне</h2>
                         <p class="hero-text">
-                            Студент ЭФБО-16-24, увлекаюсь веб-разработкой. Изучаю HTML, CSS и JavaScript. 
+                            Студент ЭФБО-16-24, увлекаюсь веб-разработкой. Изучаю HTML, CSS и JavaScript.
                             Люблю создавать красивые и функциональные сайты.
                         </p>
                     </div>
@@ -88,6 +88,80 @@
             </div>
         </section>
 
+        <!-- === ТЕХНИКА 3: Разные изображения для разных экранов === -->
+        <section id="projects-preview" class="projects-adaptive section">
+            <div class="container">
+                <h2 class="section-title">Адаптивные изображения проектов</h2>
+                
+                <div class="adaptive-images-demo">
+                    <!-- Проект 1 с разными изображениями для разных экранов -->
+                    <div class="adaptive-image-container">
+                        <h3>Проект "Личный сайт"</h3>
+                        <picture>
+                            <!-- Большое изображение для десктопов -->
+                            <source media="(min-width: 1200px)" srcset="images/project-desktop.jpg">
+                            <!-- Среднее для планшетов -->
+                            <source media="(min-width: 768px)" srcset="images/project-tablet.jpg">
+                            <!-- Маленькое для мобильных -->
+                            <img src="images/project-mobile.jpg" 
+                                 alt="Личный сайт - адаптивное изображение"
+                                 class="responsive-image">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === ТЕХНИКА 6: Адаптивная галерея === -->
+        <section id="gallery" class="gallery-section section">
+            <div class="container">
+                <h2 class="section-title">Галерея проектов</h2>
+                
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <div class="gallery-image-container">
+                            <!-- === ТЕХНИКА 5: Object-fit свойства === -->
+                            <img src="images/gallery1.jpg" 
+                                 alt="Галерея 1 - Личный сайт" 
+                                 class="gallery-image object-fit-cover"
+                                 loading="lazy">
+                        </div>
+                        <p class="gallery-caption">Личный сайт-портфолио</p>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="gallery-image-container">
+                            <img src="images/gallery2.jpg" 
+                                 alt="Галерея 2 - Веб-приложение" 
+                                 class="gallery-image object-fit-contain"
+                                 loading="lazy">
+                        </div>
+                        <p class="gallery-caption">Веб-приложение</p>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="gallery-image-container">
+                            <img src="images/gallery3.jpg" 
+                                 alt="Галерея 3 - Адаптивный лендинг" 
+                                 class="gallery-image object-fit-cover"
+                                 loading="lazy">
+                        </div>
+                        <p class="gallery-caption">Адаптивный лендинг</p>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="gallery-image-container">
+                            <img src="images/gallery4.jpg" 
+                                 alt="Галерея 4 - UI Kit" 
+                                 class="gallery-image object-fit-cover"
+                                 loading="lazy">
+                        </div>
+                        <p class="gallery-caption">Дизайн-система</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Проекты с адаптивной Grid-сеткой -->
         <section id="projects" class="projects section">
             <div class="container">
@@ -97,42 +171,51 @@
                 <div class="projects-area">
                     <div class="projects-list">
                         <article class="project-card">
-                            <!-- ЗАМЕНИТЕ ПУТИ НА ВАШИ ФАЙЛЫ ПРОЕКТОВ -->
+                            <!-- === ТЕХНИКА 1: Базовое адаптивное изображение === -->
                             <div class="project-card-image">
-                                <img src="images/project1.jpg" alt="Личный сайт-портфолио" width="400" height="300">
+                                <img src="images/project1.jpg" 
+                                     alt="Личный сайт-портфолио" 
+                                     class="responsive-image"
+                                     loading="lazy">
                             </div>
                             <div class="project-card-content">
                                 <h3 class="project-card-title">Личный сайт</h3>
                                 <p class="project-card-description">
                                     Сайт-портфолио на HTML и CSS с адаптивным дизайном и современными возможностями.
                                 </p>
-                                <a href="#" class="button">Подробнее</a>
+                                <a href="projects.html" class="button">Подробнее</a>
                             </div>
                         </article>
                         
                         <article class="project-card">
                             <div class="project-card-image">
-                                <img src="images/project2.jpg" alt="Веб-приложение" width="400" height="300">
+                                <img src="images/project2.jpg" 
+                                     alt="Веб-приложение" 
+                                     class="responsive-image"
+                                     loading="lazy">
                             </div>
                             <div class="project-card-content">
                                 <h3 class="project-card-title">Веб-приложение</h3>
                                 <p class="project-card-description">
                                     Простое веб-приложение на JavaScript с интерактивными элементами и локальным хранилищем.
                                 </p>
-                                <a href="#" class="button">Подробнее</a>
+                                <a href="projects.html" class="button">Подробнее</a>
                             </div>
                         </article>
                         
                         <article class="project-card">
                             <div class="project-card-image">
-                                <img src="images/project3.jpg" alt="Адаптивный лендинг" width="400" height="300">
+                                <img src="images/project3.jpg" 
+                                     alt="Адаптивный лендинг" 
+                                     class="responsive-image"
+                                     loading="lazy">
                             </div>
                             <div class="project-card-content">
                                 <h3 class="project-card-title">Адаптивный лендинг</h3>
                                 <p class="project-card-description">
                                     Лендинговая страница с адаптивной версткой, оптимизированными изображениями и анимациями.
                                 </p>
-                                <a href="#" class="button">Подробнее</a>
+                                <a href="projects.html" class="button">Подробнее</a>
                             </div>
                         </article>
                     </div>
@@ -174,15 +257,14 @@
         </section>
     </main>
 
-    <!-- Футер с safe-area -->
     <footer class="footer">
         <div class="container footer-container">
-            <p>&copy; 2024 Светиков Максим. Все права защищены.</p>
+            <p>&copy; <span id="current-year">2024</span> Светиков Максим. Все права защищены.</p>
             <p>Студент ЭФБО-16-24</p>
             <div class="footer-links">
                 <a href="mailto:example@email.com">Email</a>
-                <a href="https://github.com" target="_blank">GitHub</a>
-                <a href="https://vk.com" target="_blank">ВКонтакте</a>
+                <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://vk.com" target="_blank" rel="noopener">ВКонтакте</a>
             </div>
         </div>
     </footer>
