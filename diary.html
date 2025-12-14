@@ -3,111 +3,560 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Дневник | Светиков Максим</title>
-    <meta name="description" content="Дневник обучения и заметки по веб-разработке">
-    <link rel="stylesheet" href="styles.css">
-    <meta name="color-scheme" content="light dark">
+    <title>Учебный дневник - Портфолио студента</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
-<body>
-    <!-- Навигация (одинаковая для всех страниц) -->
-    <nav class="nav">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">ЗМ</a>
-            <ul class="nav-list">
-                <li><a href="index.html" class="nav-link">Главная</a></li>
-                <li><a href="diary.html" class="nav-link active">Дневник</a></li>
-                <li><a href="projects.html" class="nav-link">Проекты</a></li>
-                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
-            </ul>
-            <button class="menu-toggle" aria-label="Меню">
-                <span></span>
-                <span></span>
-                <span></span>
+<body class="bg-light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <i class="bi bi-code-slash"></i>
+                DevPortfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">
+                            <i class="bi bi-house me-1"></i>Главная
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">
+                            <i class="bi bi-folder me-1"></i>Проекты
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="diary.html">
+                            <i class="bi bi-journal me-1"></i>Дневник
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">
+                            <i class="bi bi-telephone me-1"></i>Контакты
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <main class="main">
-        <section class="diary section">
-            <div class="container">
-                <h1 class="section-title">Дневник обучения</h1>
-                <p class="subtitle">Заметки, идеи и прогресс в веб-разработке</p>
-                
-                <div class="diary-entries">
-                    <article class="diary-entry">
-                        <div class="diary-date">
-                            <time datetime="2024-01-15">15 января 2024</time>
-                        </div>
-                        <div class="diary-content">
-                            <h3>Изучаю контейнерные запросы</h3>
-                            <p>Сегодня разобрался с контейнерными запросами в CSS. Это революционная технология, которая позволяет компонентам адаптироваться к размеру своего контейнера, а не окна браузера.</p>
-                            <p>Особенно полезно для повторно используемых компонентов, которые могут располагаться в разных частях макета.</p>
-                            <div class="tags">
-                                <span class="tag">CSS</span>
-                                <span class="tag">Адаптивность</span>
-                                <span class="tag">Новые технологии</span>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <article class="diary-entry">
-                        <div class="diary-date">
-                            <time datetime="2024-01-10">10 января 2024</time>
-                        </div>
-                        <div class="diary-content">
-                            <h3>Оптимизация LCP</h3>
-                            <p>Работал над оптимизацией Largest Contentful Paint для своего сайта. Основные моменты:</p>
-                            <ul>
-                                <li>Использование современных форматов изображений (AVIF, WebP)</li>
-                                <li>Правильное указание sizes и srcset</li>
-                                <li>Приоритетная загрузка критических ресурсов</li>
-                            </ul>
-                            <p>Результат: LCP улучшился с 4.2с до 1.8с!</p>
-                            <div class="tags">
-                                <span class="tag">Производительность</span>
-                                <span class="tag">Оптимизация</span>
-                                <span class="tag">Core Web Vitals</span>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <article class="diary-entry">
-                        <div class="diary-date">
-                            <time datetime="2024-01-05">5 января 2024</time>
-                        </div>
-                        <div class="diary-content">
-                            <h3>Начал изучение JavaScript</h3>
-                            <p>Приступил к углубленному изучению JavaScript. Основные темы:</p>
-                            <ul>
-                                <li>Асинхронное программирование (Promise, async/await)</li>
-                                <li>Работа с DOM</li>
-                                <li>Модульная структура кода</li>
-                            </ul>
-                            <div class="tags">
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">Программирование</span>
-                                <span class="tag">Основы</span>
-                            </div>
-                        </div>
-                    </article>
+    <!-- Page Header -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h1 class="hero-title">Учебный дневник</h1>
+                    <p class="hero-subtitle">Отслеживание образовательного прогресса с адаптивным контентом</p>
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#addEntryModal">
+                        <i class="bi bi-plus-circle me-1"></i>Добавить запись
+                    </button>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- Adaptive Images Demo -->
+    <section class="py-4 bg-info text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h4 class="mb-2">
+                        <i class="bi bi-lightbulb me-2"></i>
+                        Практика адаптивных изображений в обучении
+                    </h4>
+                    <p class="mb-0">Изучаю и применяю современные техники работы с изображениями в веб-разработке</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <span class="badge bg-warning text-dark fs-6">Практическое занятие 16</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Progress Timeline -->
+                <div class="col-lg-8 mb-5">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="card-title h5 mb-0">
+                                <i class="bi bi-graph-up me-2"></i>
+                                Хронология прогресса
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="timeline" id="progressTimeline">
+                                <!-- Entry 1 -->
+                                <div class="timeline-item completed">
+                                    <div class="timeline-marker bg-success">
+                                        <i class="bi bi-check-lg"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h6 class="mb-1 fw-bold">Адаптивная верстка изображений</h6>
+                                            <span class="badge bg-success">Завершено</span>
+                                        </div>
+                                        <div class="image-demo mb-3">
+                                            <picture>
+                                                <source srcset="../images/diary/responsive-demo.webp" type="image/webp">
+                                                <img src="../images/diary/responsive-demo.jpg" 
+                                                     class="responsive-image rounded" 
+                                                     alt="Демонстрация адаптивных изображений"
+                                                     loading="lazy">
+                                            </picture>
+                                        </div>
+                                        <p class="text-muted mb-2">Изучение и применение техник адаптивной работы с изображениями: picture element, srcset, object-fit</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">
+                                                <i class="bi bi-calendar me-1"></i>15 декабря 2024
+                                            </small>
+                                            <div>
+                                                <span class="badge bg-primary me-1">HTML/CSS</span>
+                                                <span class="badge bg-info">Responsive</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Entry 2 -->
+                                <div class="timeline-item completed">
+                                    <div class="timeline-marker bg-success">
+                                        <i class="bi bi-check-lg"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h6 class="mb-1 fw-bold">WebP оптимизация и форматы</h6>
+                                            <span class="badge bg-success">Завершено</span>
+                                        </div>
+                                        <div class="image-comparison mb-3">
+                                            <div class="row g-2">
+                                                <div class="col-6">
+                                                    <div class="text-center">
+                                                        <img src="../images/diary/jpeg-demo.jpg" 
+                                                             class="img-fluid rounded border" 
+                                                             alt="JPEG формат"
+                                                             loading="lazy">
+                                                        <small class="text-muted">JPEG - 85KB</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="text-center">
+                                                        <picture>
+                                                            <source srcset="../images/diary/webp-demo.webp" type="image/webp">
+                                                            <img src="../images/diary/webp-demo.jpg" 
+                                                                 class="img-fluid rounded border" 
+                                                                 alt="WebP формат"
+                                                                 loading="lazy">
+                                                        </picture>
+                                                        <small class="text-muted">WebP - 45KB</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text-muted mb-2">Сравнение форматов изображений и оптимизация размера файлов с сохранением качества</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">
+                                                <i class="bi bi-calendar me-1"></i>12 декабря 2024
+                                            </small>
+                                            <div>
+                                                <span class="badge bg-success me-1">Optimization</span>
+                                                <span class="badge bg-warning">WebP</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Entry 3 -->
+                                <div class="timeline-item in-progress">
+                                    <div class="timeline-marker bg-warning">
+                                        <i class="bi bi-arrow-repeat"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h6 class="mb-1 fw-bold">Retina и высокоплотные экраны</h6>
+                                            <span class="badge bg-warning">В процессе</span>
+                                        </div>
+                                        <div class="retina-demo mb-3 text-center">
+                                            <img src="../images/icons/icon@1x.png"
+                                                 srcset="../images/icons/icon@1x.png 1x, ../images/icons/icon@2x.png 2x"
+                                                 alt="Иконка с поддержкой Retina"
+                                                 class="retina-image"
+                                                 width="80"
+                                                 height="80">
+                                            <div class="mt-2">
+                                                <small class="text-muted">Адаптивная иконка для Retina дисплеев</small>
+                                            </div>
+                                        </div>
+                                        <p class="text-muted mb-2">Работа с srcset и плотностью пикселей для поддержки высококачественных дисплеев</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">
+                                                <i class="bi bi-calendar me-1"></i>10 декабря 2024
+                                            </small>
+                                            <div>
+                                                <span class="badge bg-primary me-1">CSS</span>
+                                                <span class="badge bg-info">Retina</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Entry 4 -->
+                                <div class="timeline-item in-progress">
+                                    <div class="timeline-marker bg-warning">
+                                        <i class="bi bi-arrow-repeat"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h6 class="mb-1 fw-bold">Object-fit и управление контейнерами</h6>
+                                            <span class="badge bg-warning">В процессе</span>
+                                        </div>
+                                        <div class="object-fit-demo-sm mb-3">
+                                            <div class="row g-2 text-center">
+                                                <div class="col-4">
+                                                    <img src="../images/square.jpg" 
+                                                         class="object-fit-cover-sm" 
+                                                         alt="Cover пример"
+                                                         loading="lazy">
+                                                    <small class="text-muted">Cover</small>
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="../images/square.jpg" 
+                                                         class="object-fit-contain-sm" 
+                                                         alt="Contain пример"
+                                                         loading="lazy">
+                                                    <small class="text-muted">Contain</small>
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="../images/square.jpg" 
+                                                         class="object-fit-fill-sm" 
+                                                         alt="Fill пример"
+                                                         loading="lazy">
+                                                    <small class="text-muted">Fill</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text-muted mb-2">Изучение CSS свойства object-fit для контроля отображения изображений в контейнерах</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">
+                                                <i class="bi bi-calendar me-1"></i>8 декабря 2024
+                                            </small>
+                                            <div>
+                                                <span class="badge bg-primary me-1">CSS3</span>
+                                                <span class="badge bg-success">Object-fit</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Entry 5 -->
+                                <div class="timeline-item planned">
+                                    <div class="timeline-marker bg-secondary">
+                                        <i class="bi bi-clock"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h6 class="mb-1 fw-bold">Lazy Loading и производительность</h6>
+                                            <span class="badge bg-secondary">Запланировано</span>
+                                        </div>
+                                        <div class="lazy-demo mb-3 text-center p-4 bg-light rounded">
+                                            <i class="bi bi-hourglass-split display-4 text-muted mb-3"></i>
+                                            <p class="text-muted mb-0">Демонстрация отложенной загрузки изображений</p>
+                                        </div>
+                                        <p class="text-muted mb-2">Планирую изучить технику lazy loading для улучшения производительности веб-страниц</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">
+                                                <i class="bi bi-calendar me-1"></i>5 декабря 2024
+                                            </small>
+                                            <div>
+                                                <span class="badge bg-success me-1">JavaScript</span>
+                                                <span class="badge bg-warning">Performance</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Techniques Demo -->
+                    <div class="card mt-4">
+                        <div class="card-header bg-success text-white">
+                            <h3 class="card-title h5 mb-0">
+                                <i class="bi bi-images me-2"></i>
+                                Демонстрация техник адаптивных изображений
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="tech-demo-card">
+                                        <h6 class="fw-bold text-primary mb-3">
+                                            <i class="bi bi-card-image me-2"></i>
+                                            Picture Element
+                                        </h6>
+                                        <picture>
+                                            <source media="(min-width: 1200px)" srcset="../images/diary/desktop-demo.webp" type="image/webp">
+                                            <source media="(min-width: 768px)" srcset="../images/diary/tablet-demo.webp" type="image/webp">
+                                            <source srcset="../images/diary/mobile-demo.webp" type="image/webp">
+                                            <img src="../images/diary/mobile-demo.jpg" 
+                                                 class="responsive-image rounded" 
+                                                 alt="Адаптивное изображение"
+                                                 loading="lazy">
+                                        </picture>
+                                        <div class="mt-2">
+                                            <small class="text-muted">Разные изображения для разных устройств</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="tech-demo-card">
+                                        <h6 class="fw-bold text-success mb-3">
+                                            <i class="bi bi-speedometer2 me-2"></i>
+                                            WebP + Ленивая загрузка
+                                        </h6>
+                                        <img src="../images/diary/optimized-demo.webp" 
+                                             class="responsive-image rounded" 
+                                             alt="Оптимизированное изображение"
+                                             loading="lazy"
+                                             width="400"
+                                             height="200">
+                                        <div class="mt-2">
+                                            <small class="text-muted">Современный формат + отложенная загрузка</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Courses & Stats -->
+                <div class="col-lg-4">
+                    <!-- Current Courses -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="card-title h5 mb-0">
+                                <i class="bi bi-book me-2"></i>
+                                Текущие курсы
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <!-- Course 1 -->
+                            <div class="skill-card mb-3">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6 class="mb-0 fw-bold">Адаптивный дизайн</h6>
+                                    <span class="text-primary fw-bold">95%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" style="width: 95%"></div>
+                                </div>
+                                <small class="text-muted">Media queries, Flexbox, Grid, Images</small>
+                            </div>
+
+                            <!-- Course 2 -->
+                            <div class="skill-card mb-3">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6 class="mb-0 fw-bold">Веб-оптимизация</h6>
+                                    <span class="text-primary fw-bold">85%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" style="width: 85%"></div>
+                                </div>
+                                <small class="text-muted">WebP, Lazy Loading, Compression</small>
+                            </div>
+
+                            <!-- Course 3 -->
+                            <div class="skill-card">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6 class="mb-0 fw-bold">Современный CSS</h6>
+                                    <span class="text-primary fw-bold">75%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width: 75%"></div>
+                                </div>
+                                <small class="text-muted">Variables, Object-fit, Aspect-ratio</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Statistics -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="card-title h5 mb-0">
+                                <i class="bi bi-bar-chart me-2"></i>
+                                Статистика обучения
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-6 mb-3">
+                                    <div class="stat-item">
+                                        <div class="h3 text-primary mb-1" id="completedCount">3</div>
+                                        <small class="text-muted">Завершено</small>
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <div class="stat-item">
+                                        <div class="h3 text-warning mb-1" id="inProgressCount">2</div>
+                                        <small class="text-muted">В процессе</small>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="stat-item">
+                                        <div class="h3 text-info mb-1" id="totalHours">68</div>
+                                        <small class="text-muted">Часов обучения</small>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="stat-item">
+                                        <div class="h3 text-success mb-1" id="skillsCount">18</div>
+                                        <small class="text-muted">Навыков освоено</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Optimization Tips -->
+                    <div class="card">
+                        <div class="card-header bg-warning text-dark">
+                            <h3 class="card-title h5 mb-0">
+                                <i class="bi bi-lightning-charge me-2"></i>
+                                Советы по оптимизации
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="optimization-tips">
+                                <div class="tip-item d-flex align-items-start mb-3">
+                                    <i class="bi bi-check-circle-fill text-success mt-1 me-2"></i>
+                                    <div>
+                                        <small class="fw-bold">Используйте WebP</small>
+                                        <small class="text-muted d-block">На 30% меньше чем JPEG</small>
+                                    </div>
+                                </div>
+                                <div class="tip-item d-flex align-items-start mb-3">
+                                    <i class="bi bi-check-circle-fill text-success mt-1 me-2"></i>
+                                    <div>
+                                        <small class="fw-bold">Lazy Loading</small>
+                                        <small class="text-muted d-block">Загружайте по необходимости</small>
+                                    </div>
+                                </div>
+                                <div class="tip-item d-flex align-items-start mb-3">
+                                    <i class="bi bi-check-circle-fill text-success mt-1 me-2"></i>
+                                    <div>
+                                        <small class="fw-bold">Адаптивные breakpoints</small>
+                                        <small class="text-muted d-block">Разные размеры для устройств</small>
+                                    </div>
+                                </div>
+                                <div class="tip-item d-flex align-items-start">
+                                    <i class="bi bi-check-circle-fill text-success mt-1 me-2"></i>
+                                    <div>
+                                        <small class="fw-bold">Указывайте размеры</small>
+                                        <small class="text-muted d-block">width/height для стабильности</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <!-- Футер (одинаковый для всех страниц) -->
+    <!-- Add Entry Modal -->
+    <div class="modal fade" id="addEntryModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Добавить учебную запись</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addEntryForm">
+                        <div class="mb-3">
+                            <label for="entryTitle" class="form-label fw-bold">Название темы</label>
+                            <input type="text" class="form-control" id="entryTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="entryDescription" class="form-label fw-bold">Описание</label>
+                            <textarea class="form-control" id="entryDescription" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="entryDate" class="form-label fw-bold">Дата</label>
+                            <input type="date" class="form-control" id="entryDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="entryStatus" class="form-label fw-bold">Статус</label>
+                            <select class="form-select" id="entryStatus" required>
+                                <option value="completed">Завершено</option>
+                                <option value="in-progress">В процессе</option>
+                                <option value="planned">Запланировано</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Технологии</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="techHtml">
+                                <label class="form-check-label" for="techHtml">HTML/CSS</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="techJs">
+                                <label class="form-check-label" for="techJs">JavaScript</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="techBootstrap">
+                                <label class="form-check-label" for="techBootstrap">Bootstrap</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="techReact">
+                                <label class="form-check-label" for="techReact">React</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" id="saveEntryBtn">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-container">
-            <p>&copy; 2024 Светиков Максим. Все права защищены.</p>
-            <p>Студент ЭФБО-16-24</p>
-            <div class="footer-links">
-                <a href="mailto:example@email.com">Email</a>
-                <a href="https://github.com" target="_blank">GitHub</a>
-                <a href="https://vk.com" target="_blank">ВКонтакте</a>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Портфолио студента. Все права защищены.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="contacts.html" class="text-white text-decoration-none me-3">
+                        <i class="bi bi-telephone me-1"></i>Контакты
+                    </a>
+                    <a href="#" class="text-white text-decoration-none">
+                        <i class="bi bi-shield-check me-1"></i>Политика конфиденциальности
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Diary JS -->
+    <script src="../scripts/diary.js"></script>
 </body>
 </html>
