@@ -34,24 +34,16 @@
                 <!-- === ТЕХНИКА 2: Picture element с форматами === -->
                 <figure class="hero-image">
                     <picture>
-                        <!-- WebP для современных браузеров -->
-                        <source 
-                            srcset="images/hero-200.webp 200w, images/hero-400.webp 400w"
-                            type="image/webp"
-                            sizes="200px">
+                        
                         <!-- JPEG для старых браузеров -->
-                        <source 
-                            srcset="images/hero-200.jpg 200w, images/hero-400.jpg 400w" 
-                            type="image/jpeg"
-                            sizes="200px">
-                        <!-- === ТЕХНИКА 4: Retina display поддержка === -->
-                        <img class="hero-photo"
-                            src="images/hero-201.jpg"
-                            srcset="images/hero-200.jpg 1x, images/hero-400.jpg 2x"
-                            sizes="200px"
-                            width="200" height="200"
-                            alt="Портрет студента Светикова Максима"
-                            fetchpriority="high">
+                        <source srcset="images/hero-201.jpg" type="image/jpeg">
+                        <!-- Фолбэк -->
+                        <img src="images/hero-201.jpg" 
+                             alt="Фото студента" 
+                             class="hero-photo responsive-image fade-in-up"
+                             loading="lazy"
+                             width="280"
+                             height="280">
                     </picture>
                 </figure>
 
